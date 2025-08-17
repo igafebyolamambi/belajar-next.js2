@@ -14,7 +14,7 @@ export default async function Notes(){
 
     return (
         <ul>
-            {notes.data.map((el) => (
+            {notes.data.map((el: {id: string, title: string}) => (
                 <li key={el.id}>
                     {el.title}
                 </li>
