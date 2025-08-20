@@ -3,6 +3,7 @@
 
 import Link from 'next/link'
 import {useCount} from '@/context'
+import { dataStore } from '@/store/dataStore'
 
 
 export default function MainLayout( { 
@@ -12,7 +13,7 @@ export default function MainLayout( {
 
 } )  {
 
-      const {count} = useCount()
+      const {count} = dataStore()
 
     return (
         <>

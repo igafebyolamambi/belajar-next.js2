@@ -2,10 +2,11 @@
 
 import Image from 'next/image'
 import styles from './page.module.css'
-import { useCount } from '@/context'
+//import { useCount } from '@/context'
+import { dataStore } from '@/store/dataStore'
 
 export default function Home() {
-  const {count, setCount} = useCount()
+  const {inc} = dataStore()
 
   return (
     <div className={styles.page}>
@@ -21,7 +22,7 @@ export default function Home() {
           height={38}
           priority
         />
-        <button onClick={() => setCount(count + 1)}>
+        <button onClick={() => inc()}>
           Button ++
         </button>
       </main>
