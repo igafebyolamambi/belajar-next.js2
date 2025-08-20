@@ -1,6 +1,8 @@
+'use client'
 
 
 import Link from 'next/link'
+import {useCount} from '@/context'
 
 
 export default function MainLayout( { 
@@ -9,6 +11,9 @@ export default function MainLayout( {
    children: React.ReactNode
 
 } )  {
+
+      const {count} = useCount()
+
     return (
         <>
            <div
@@ -31,6 +36,11 @@ export default function MainLayout( {
           </header>
 
           <main className='flex-1 container mx-auto p-4'>
+            <div>
+              <p>
+                {`Count : ${count}`}
+              </p>
+            </div>
             {children}
           </main>
 

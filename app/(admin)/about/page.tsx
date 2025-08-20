@@ -1,3 +1,13 @@
+'use client'
+
+import { useCount } from "@/context"
+
 export default function About( ) {
-         return <div>About Page</div>
+    const{count, setCount} = useCount()
+
+         return <div><h1>About Page</h1>
+          <button onClick={() => setCount(count + 1)}>
+          Button ++
+        </button>
+         </div>
 }
